@@ -52,6 +52,54 @@ width:min(1200px,90%);
 margin:auto;
 }
 
+/* LOADER */
+
+#loader{
+
+    position:fixed;
+    inset:0;
+
+    background:#211b15;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:99999;
+
+    transition:opacity .8s ease, visibility .8s ease;
+
+}
+
+#loader img{
+
+    width:220px;
+    max-width:60vw;
+
+    animation:pulse 1.8s ease-in-out infinite;
+
+}
+
+#loader.hidden{
+
+    opacity:0;
+    visibility:hidden;
+
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        opacity:.75;
+        transform:scale(.98);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.03);
+    }
+
+}
 
 /* NAV */
 
@@ -604,6 +652,12 @@ font-size:40px;
 
 
 <body>
+
+<div id="loader">
+
+    <img src="images/BR MEDIA-transparent-white.png" alt="Backcountry Ranching Media">
+
+</div>
 
 <nav>
 
@@ -1184,6 +1238,18 @@ previousImage();
 
 }
 
+
+});
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+
+        loader.classList.add("hidden");
+
+    }, 700);
 
 });
 
