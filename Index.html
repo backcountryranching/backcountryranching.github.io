@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Backcountry Ranching Media</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+
+html{
+scroll-behavior:smooth;
+}
+
+
+body{
+font-family:Inter,sans-serif;
+background:#211b15;
+color:#f5f1e8;
+line-height:1.6;
+}
+
+
+img{
+width:100%;
+display:block;
+}
+
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+
+.container{
+width:min(1200px,90%);
+margin:auto;
+}
+
+
+/* NAV */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    padding:30px 0;
+    background:transparent;
+    transition:all .35s ease;
+    z-index:1000;
+}
+
+nav.scrolled{
+    background:rgba(27,25,22,.92);
+    backdrop-filter:blur(8px);
+    padding:14px 0;
+    box-shadow:0 2px 20px rgba(0,0,0,.15);
+}
+
+.nav-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+
+.logo img{
+    height:120px;
+    width:auto;
+    display:block;
+    transition:.35s;
+}
+
+.logo img:hover{
+    opacity:.85;
+}
+
+nav.scrolled .logo img{
+    height:65px;
+}
+nav.scrolled .menu a{
+
+    font-size:.92rem;
+
+}
+
+.menu{
+display:flex;
+gap:30px;
+}
+
+
+.menu a{
+opacity:.85;
+transition:.35s;
+font-size:1rem;
+letter-spacing:.5px;
+}
+
+
+.menu a:hover{
+opacity:1;
+color:#d7b47b;
+}
+
+
+
+/* HERO */
+
+.hero{
+    position:relative;
+    height:100vh;
+
+    background:
+        linear-gradient(rgba(0,0,0,.20), rgba(0,0,0,.20)),
+        url("images/hero.jpg");
+
+    background-size:cover;
+    background-position:center 40%;
+    background-repeat:no-repeat;
+}
+
+.hero-content{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    bottom:12%;
+    width:min(700px,90%);
+}
+
+.hero h1{
+font-family:"Playfair Display",serif;
+font-size:4rem;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+
+.hero p{
+
+font-size:1.1rem;
+opacity:.9;
+margin-bottom:35px;
+
+}
+
+.hero-button{
+    display:flex;
+    justify-content:center;
+    margin-top:35px;
+}
+
+
+.btn{
+
+display:inline-block;
+padding:16px 35px;
+border:2px solid white;
+transition:.35s;
+
+}
+
+
+.btn:hover{
+
+background:white;
+color:black;
+
+}
+
+
+
+/* SECTIONS */
+
+section{
+
+padding:100px 0;
+
+}
+
+
+.section-title{
+
+font-family:"Playfair Display",serif;
+font-size:2.6rem;
+margin-bottom:20px;
+text-align:center;
+
+}
+
+
+.section-sub{
+text-align:center;
+color:#b8ad9d;
+margin-bottom:60px;
+}
+
+/* PORTFOLIO */
+
+.gallery{
+
+    columns:3 320px;
+    column-gap:24px;
+
+}
+
+
+.gallery figure{
+
+    break-inside:avoid;
+
+    margin-bottom:24px;
+
+    overflow:hidden;
+
+    border-radius:8px;
+
+}
+
+
+.gallery img{
+
+    width:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    transition:transform .4s ease;
+
+}
+
+
+.gallery figure:hover img{
+
+    transform:scale(1.03);
+
+}
+
+
+/* Regular vertical image */
+
+.gallery figure.small{
+
+    grid-column:span 3;
+
+    aspect-ratio:4/5;
+
+}
+
+
+/* Featured vertical image */
+
+.gallery figure.large{
+
+    grid-column:span 6;
+
+    aspect-ratio:4/5;
+
+}
+
+
+/* Horizontal image - width of two verticals */
+
+.gallery figure.wide{
+
+    grid-column:span 6;
+
+    aspect-ratio:3/2;
+
+}
+
+/* mobile */
+
+@media(max-width:900px){
+
+.gallery{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.gallery figure.small,
+.gallery figure.large,
+.gallery figure.wide{
+
+grid-column:span 2;
+
+aspect-ratio:4/5;
+
+}
+
+}
+
+/* LIGHTBOX */
+
+#lightbox{
+
+position:fixed;
+inset:0;
+
+background:rgba(0,0,0,.96);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+z-index:9999;
+
+opacity:0;
+transition:.3s;
+
+}
+
+
+#lightbox.active{
+
+display:flex;
+opacity:1;
+
+}
+
+
+#lightbox img{
+
+max-width:90vw;
+max-height:90vh;
+
+object-fit:contain;
+
+transform:scale(.95);
+
+transition:.3s;
+
+}
+
+
+#lightbox.active img{
+
+transform:scale(1);
+
+}
+
+
+
+/* LIGHTBOX BUTTONS */
+
+#close{
+
+position:absolute;
+
+top:25px;
+right:40px;
+
+font-size:55px;
+
+color:white;
+
+cursor:pointer;
+
+z-index:2;
+
+}
+
+
+.arrow{
+
+position:absolute;
+
+top:50%;
+
+transform:translateY(-50%);
+
+font-size:60px;
+
+color:white;
+
+cursor:pointer;
+
+padding:20px;
+
+user-select:none;
+
+}
+
+
+#prev{
+
+left:20px;
+
+}
+
+
+#next{
+
+right:20px;
+
+}
+
+
+
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+
+
+.about img{
+
+border-radius:6px;
+
+}
+
+#about{
+    background:#e8dfd0;
+    color:#241b14;
+}
+
+#about .section-title{
+    color:#241b14;
+}
+
+#about p{
+    color:#4a4037;
+}
+
+/* SERVICES */
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+
+}
+
+.card{
+padding:35px;
+background:#e8dfd0;
+border:1px solid #b6a58c;
+}
+
+
+.card h3{
+
+margin-bottom:15px;
+font-size:1.4rem;
+
+}
+
+#services{
+    background:#c8b79f;
+    color:#241b14;
+}
+
+/* CONTACT */
+
+.contact{
+
+text-align:center;
+
+}
+
+
+.contact h2{
+
+margin-bottom:20px;
+
+}
+
+
+.contact p{
+
+margin-bottom:12px;
+color:#bbb;
+
+}
+
+#contact{
+    background:#151310;
+    color:#f5f1e8;
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+background:#151310;
+
+color:#b8ad9d;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.logo img{
+    height:80px;
+}
+
+.hero h1{
+
+font-size:2.8rem;
+
+}
+
+
+.about{
+
+grid-template-columns:1fr;
+
+}
+
+
+.menu{
+
+display:none;
+
+}
+
+
+.arrow{
+
+font-size:40px;
+
+}
+
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<nav>
+
+<div class="container nav-inner">
+
+<div class="logo">
+    <a href="#">
+        <img src="images/BR MEDIA-transparent-white.png" alt="Backcountry Ranching">
+    </a>
+</div>
+
+
+<div class="menu">
+
+<a href="#portfolio">Portfolio</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+<header class="hero">
+
+<div class="container hero-content">
+
+<h1>
+Capturing the Spirit of the Western Lifestyle
+</h1>
+
+
+<p>
+Professional photography specializing in rodeo, ranching, western performance horses, livestock, and authentic outdoor stories.
+</p>
+
+
+<div class="hero-button">
+    <a class="btn" href="#portfolio">
+        View Portfolio
+    </a>
+</div>
+
+
+</div>
+
+</header>
+
+
+
+
+
+<section id="portfolio">
+
+<div class="container">
+
+
+<h2 class="section-title">
+Featured Portfolio
+</h2>
+
+
+<p class="section-sub">
+Authentic moments. Genuine emotion. Western heritage.
+</p>
+
+
+<div class="gallery">
+
+<figure>
+    <img src="images/IMG_0039-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0117-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0133-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0365-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0385-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0370-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0578-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0499-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0618-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0705-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0786-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0668-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0802-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0791-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0757-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0759-Edit.jpg">
+</figure>
+
+<figure>
+    <img src="images/IMG_0765-Edit.jpg">
+</figure>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox">
+
+
+<span id="close">&times;</span>
+
+
+<span class="arrow" id="prev">&#10094;</span>
+
+
+<img id="lightbox-img" src="">
+
+
+<span class="arrow" id="next">&#10095;</span>
+
+
+</div>
+
+
+
+
+
+
+
+<section id="about">
+
+
+<div class="container about">
+
+
+<div>
+
+
+<h2 class="section-title" style="text-align:left;">
+About
+</h2>
+
+
+<p>
+
+I document authentic western culture through timeless imagery.
+
+From the intensity of rodeo competition to quiet mornings on the ranch, every photograph is created to preserve emotion, movement, and atmosphere.
+
+Whether you're an athlete, ranch owner, breeder, or western brand, my goal is to create images that tell your story with honesty and craftsmanship.
+
+</p>
+
+
+</div>
+
+
+
+<div>
+
+<img src="images/profile.jpg" alt="Photographer">
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<section id="services">
+
+
+<div class="container">
+
+
+<h2 class="section-title">
+Services
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>Rodeo Events</h3>
+
+<p>
+Bull riding, bronc riding, barrel racing, team roping, cutting, and western competitions.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Equine Portraits</h3>
+
+<p>
+Professional portraits of horses and riders for private owners, breeders, and trainers.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>Commercial Branding</h3>
+
+<p>
+Photography for western brands, ranches, apparel companies, and advertising campaigns.
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Ranch Lifestyle</h3>
+
+<p>
+Authentic storytelling showcasing ranch life, livestock, cowboys, and agriculture.
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<section id="contact">
+
+
+<div class="container contact">
+
+
+<h2 class="section-title">
+Let's Work Together
+</h2>
+
+
+
+<p>
+Available throughout Canada and the United States.
+</p>
+
+
+<p>
+media@backcountryranching.com
+</p>
+
+
+<p>
+Instagram: @backcountryranching
+</p>
+
+
+
+<br>
+
+
+<a class="btn" href="#">
+Get In Touch
+</a>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+<footer>
+
+© 2026 BackcountryRanching. All Rights Reserved.
+
+</footer>
+
+
+
+
+
+
+<script>
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible");
+
+}
+
+});
+
+},{
+threshold:.15
+});
+
+document.querySelectorAll(".gallery figure").forEach(photo=>{
+
+observer.observe(photo);
+
+});
+
+const nav = document.querySelector("nav");
+window.addEventListener("scroll",()=>{
+    if(window.scrollY > 100){
+
+        nav.classList.add("scrolled");
+
+    }else{
+
+        nav.classList.remove("scrolled");
+
+    }
+
+});
+
+
+const images = document.querySelectorAll(".gallery img");
+
+const lightbox = document.getElementById("lightbox");
+
+const lightboxImg = document.getElementById("lightbox-img");
+
+const closeBtn = document.getElementById("close");
+
+const nextBtn = document.getElementById("next");
+
+const prevBtn = document.getElementById("prev");
+
+
+let currentIndex = 0;
+
+
+
+
+function openLightbox(index){
+
+currentIndex = index;
+
+lightboxImg.src = images[currentIndex].src;
+
+lightbox.classList.add("active");
+
+document.body.style.overflow="hidden";
+
+}
+
+
+
+
+function closeLightbox(){
+
+lightbox.classList.remove("active");
+
+document.body.style.overflow="auto";
+
+}
+
+
+
+
+function nextImage(){
+
+currentIndex++;
+
+if(currentIndex >= images.length){
+
+currentIndex = 0;
+
+}
+
+lightboxImg.src = images[currentIndex].src;
+
+}
+
+
+
+
+function previousImage(){
+
+currentIndex--;
+
+if(currentIndex < 0){
+
+currentIndex = images.length - 1;
+
+}
+
+lightboxImg.src = images[currentIndex].src;
+
+}
+
+
+
+
+images.forEach((img,index)=>{
+
+img.addEventListener("click",()=>{
+
+openLightbox(index);
+
+});
+
+});
+
+
+
+closeBtn.onclick = closeLightbox;
+
+
+nextBtn.onclick = nextImage;
+
+
+prevBtn.onclick = previousImage;
+
+
+
+
+lightbox.onclick = (e)=>{
+
+if(e.target === lightbox){
+
+closeLightbox();
+
+}
+
+};
+
+
+
+
+
+document.addEventListener("keydown",(e)=>{
+
+
+if(e.key==="Escape"){
+
+closeLightbox();
+
+}
+
+
+if(e.key==="ArrowRight"){
+
+nextImage();
+
+}
+
+
+if(e.key==="ArrowLeft"){
+
+previousImage();
+
+}
+
+
+
+});
+
+
+
+
+
+// Mobile swipe support
+
+let touchStartX = 0;
+
+
+lightbox.addEventListener("touchstart",(e)=>{
+
+touchStartX=e.changedTouches[0].screenX;
+
+});
+
+
+
+lightbox.addEventListener("touchend",(e)=>{
+
+
+let touchEndX=e.changedTouches[0].screenX;
+
+
+if(touchStartX-touchEndX > 50){
+
+nextImage();
+
+}
+
+
+if(touchEndX-touchStartX > 50){
+
+previousImage();
+
+}
+
+
+});
+
+
+
+</script>
+
+
+</body>
+
+</html>
