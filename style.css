@@ -160,7 +160,7 @@ footer{padding:40px;text-align:center;background:var(--brown-dark);color:#b8ad9d
     }
     .menu-overlay.active{opacity:1;visibility:visible;pointer-events:auto;}
     .hero{min-height:560px;background-position:center 35%;}
-    .hero-content{bottom:9%;width:min(92%,650px);}
+    .hero-content{bottom:calc(90px + env(safe-area-inset-bottom));width:min(92%,650px);}
     .hero h1{font-size:2.45rem;}
     .hero p{font-size:1rem;margin-bottom:24px;}
     .hero-button{margin-top:24px;}
