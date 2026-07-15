@@ -159,8 +159,8 @@ footer{padding:40px;text-align:center;background:var(--brown-dark);color:#b8ad9d
         opacity:0;visibility:hidden;pointer-events:none;transition:.35s ease;z-index:2000;
     }
     .menu-overlay.active{opacity:1;visibility:visible;pointer-events:auto;}
-    .hero{min-height:560px;background-position:center 35%;}
-    .hero-content{bottom:calc(90px + env(safe-area-inset-bottom));width:min(92%,650px);}
+    .hero{height:100svh;min-height:0;display:flex;align-items:flex-end;background-position:center 35%;}
+    .hero-content{position:relative;left:auto;bottom:auto;transform:none;width:min(92%,650px);margin:0 auto;padding-bottom:40px;}
     .hero h1{font-size:2.45rem;}
     .hero p{font-size:1rem;margin-bottom:24px;}
     .hero-button{margin-top:24px;}
