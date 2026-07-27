@@ -1,401 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Equine & Western Photographer | Backcountry Ranching Media</title>
-
-    <meta
-        name="description"
-        content="Professional equine, rodeo and western lifestyle photography available throughout Canada and the United States."
-    >
-
+    <meta name="description" content="Professional equine, rodeo and western lifestyle photography available throughout Canada and the United States.">
     <link rel="canonical" href="https://backcountryranching.com/">
-
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Backcountry Ranching Media">
     <meta property="og:title" content="Equine & Western Photographer | Backcountry Ranching Media">
-    <meta
-        property="og:description"
-        content="Professional equine, rodeo and western lifestyle photography available throughout Canada and the United States."
-    >
+    <meta property="og:description" content="Professional equine, rodeo and western lifestyle photography available throughout Canada and the United States.">
     <meta property="og:url" content="https://backcountryranching.com/">
     <meta property="og:image" content="https://backcountryranching.com/images/hero.jpg">
     <meta property="og:image:alt" content="Western horses photographed by Backcountry Ranching Media">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-    >
-
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    >
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-
 </head>
-
-
-<body id="top">
+<body id="top" data-loader-image="images/hero.jpg">
 
 <div id="loader">
-
     <img src="images/BR MEDIA-transparent-white.png" alt="Backcountry Ranching Media">
-
 </div>
 
 <nav>
-
-<div class="container nav-inner">
-
-    <div class="logo">
-        <a href="#top" aria-label="Back to top">
-            <img src="images/BR MEDIA-transparent-white.png" alt="Backcountry Ranching">
-        </a>
+    <div class="container nav-inner">
+        <div class="logo">
+            <a href="#top" aria-label="Back to top">
+                <img src="images/BR MEDIA-transparent-white.png" alt="Backcountry Ranching">
+            </a>
+        </div>
+        <div class="menu" id="main-menu">
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">
+            <span></span><span></span><span></span>
+        </button>
     </div>
-
-    <div class="menu" id="main-menu">
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </div>
-
-    <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-</div>
-
 </nav>
 <div class="menu-overlay" aria-hidden="true"></div>
 
 <header class="hero">
-
-<div class="container hero-content">
-
-<h1>
-Capturing the Spirit of the Western Lifestyle
-</h1>
-
-
-<p>
-Professional photography specializing in rodeo, ranching, western culture, horses, livestock, and authentic outdoor stories.
-</p>
-
-
-<div class="hero-button">
-    <a class="btn" href="#portfolio">
-        View Portfolio
-    </a>
-</div>
-
-
-</div>
-
+    <div class="container hero-content">
+        <h1>Capturing the Spirit of the Western Lifestyle</h1>
+        <p>Professional photography specializing in rodeo, ranching, western culture, horses, livestock, and authentic outdoor stories.</p>
+        <div class="hero-button">
+            <a class="btn" href="#portfolio">View Portfolio</a>
+        </div>
+    </div>
 </header>
 
+<section id="portfolio" class="portfolio-categories-section">
+    <div class="container">
+        <h2 class="section-title">Portfolio</h2>
+        <p class="section-sub">Authentic moments. Genuine emotion. Western heritage.</p>
 
-<section id="portfolio">
+        <div class="portfolio-categories">
+            <a class="portfolio-category" href="portfolio-lifestyle.html" aria-label="View the Western Lifestyle portfolio">
+                    <img src="images/IMG_1473.jpg" alt="Western lifestyle photography" loading="lazy" decoding="async">
+                    <span class="portfolio-category-overlay"></span>
+                    <span class="portfolio-category-content">
+                        <span class="portfolio-category-title">Western Lifestyle</span>
+                        <span class="portfolio-category-link">View Gallery <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
 
-<div class="container">
+            <a class="portfolio-category" href="portfolio-portraits.html" aria-label="View the Equine Portraits portfolio">
+                <img src="images/IMG_0705.jpg" alt="Equine portrait photography" loading="lazy" decoding="async">
+                <span class="portfolio-category-overlay"></span>
+                <span class="portfolio-category-content">
+                    <span class="portfolio-category-title">Equine Portraits</span>
+                    <span class="portfolio-category-link">View Gallery <span aria-hidden="true">→</span></span>
+                </span>
+            </a>
 
+            <a class="portfolio-category" href="portfolio-rodeo.html" aria-label="View the Rodeo portfolio">
+                <img src="images/IMG_0365.jpg" alt="Rodeo photography" loading="lazy" decoding="async">
+                <span class="portfolio-category-overlay"></span>
+                <span class="portfolio-category-content">
+                    <span class="portfolio-category-title">Rodeo</span>
+                    <span class="portfolio-category-link">View Gallery <span aria-hidden="true">→</span></span>
+                </span>
+            </a>
 
-<h2 class="section-title">
-Portfolio
-</h2>
-
-
-<p class="section-sub">
-Authentic moments. Genuine emotion. Western heritage.
-</p>
-
-
-<div class="gallery">
-
-<figure>
-    <img src="images/IMG_0039.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0117.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0133.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0189.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0365.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0385.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0370.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0578.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0499.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0705.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0786.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0668.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0802.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0791.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0757.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0759.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0765.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_1473.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_1495.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_1519.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-<figure>
-    <img src="images/IMG_0039-2.jpg" alt="Western and equine photography" loading="lazy" decoding="async">
-</figure>
-
-</div>
-
-
-</div>
-
+            <a class="portfolio-category" href="portfolio-brands.html" aria-label="View the Brands and Commercial portfolio">
+                <img src="images/IMG_0765.jpg" alt="Western brand and commercial photography" loading="lazy" decoding="async">
+                <span class="portfolio-category-overlay"></span>
+                <span class="portfolio-category-content">
+                    <span class="portfolio-category-title">Brands &amp; Commercial</span>
+                    <span class="portfolio-category-link">View Gallery <span aria-hidden="true">→</span></span>
+                </span>
+            </a>
+        </div>
+    </div>
 </section>
-
-
-<!-- LIGHTBOX -->
-
-<div id="lightbox">
-
-
-<span id="close">&times;</span>
-
-
-<span class="arrow" id="prev">&#10094;</span>
-
-
-<img id="lightbox-img" src="" alt="">
-
-
-<span class="arrow" id="next">&#10095;</span>
-
-
-</div>
-
 
 <section id="about">
-
-
-<div class="container about">
-
-
-<div>
-
-
-<h2 class="section-title section-title-left">
-About
-</h2>
-
-
-<p>
-
-I document authentic western culture through timeless imagery.
-
-From the intensity of rodeo competition to quiet mornings on the ranch, every photograph is created to preserve emotion, movement, and atmosphere.
-
-Whether you're an athlete, ranch owner, breeder, or western brand, my goal is to create images that tell your story with honesty and craftsmanship.
-
-</p>
-
-
-</div>
-
-
-<div>
-
-<img src="images/IMG_0039.jpg" alt="Photographer">
-
-</div>
-
-
-</div>
-
-
+    <div class="container about">
+        <div>
+            <h2 class="section-title section-title-left">About</h2>
+            <p>I document authentic western culture through timeless imagery.<br><br>From the intensity of rodeo competition to quiet mornings on the ranch, every photograph is created to preserve emotion, movement, and atmosphere.<br><br>Whether you're an athlete, ranch owner, breeder, or western brand, my goal is to create images that tell your story with honesty and craftsmanship.</p>
+        </div>
+        <div>
+            <img src="images/IMG_0039.jpg" alt="Photographer">
+        </div>
+    </div>
 </section>
-
 
 <section id="services">
-
-
-<div class="container">
-
-
-<h2 class="section-title">
-Services
-</h2>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>Rodeo Events</h3>
-
-<p>
-Bull riding, bronc riding, barrel racing, team roping, cutting, and western competitions.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Equine Portraits</h3>
-
-<p>
-Professional portraits of horses and riders for private owners, breeders, and trainers.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Commercial Branding</h3>
-
-<p>
-Photography for western brands, ranches, apparel companies, and advertising campaigns.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>Ranch Lifestyle</h3>
-
-<p>
-Authentic storytelling showcasing ranch life, livestock, cowboys, and agriculture.
-</p>
-
-</div>
-
-
-</div>
-
-
-</div>
-
-
+    <div class="container">
+        <h2 class="section-title">Services</h2>
+        <div class="cards">
+            <div class="card"><h3>Rodeo Events</h3><p>Bull riding, bronc riding, barrel racing, team roping, cutting, and western competitions.</p></div>
+            <div class="card"><h3>Equine Portraits</h3><p>Professional portraits of horses and riders for private owners, breeders, and trainers.</p></div>
+            <div class="card"><h3>Commercial Branding</h3><p>Photography for western brands, ranches, apparel companies, and advertising campaigns.</p></div>
+            <div class="card"><h3>Ranch Lifestyle</h3><p>Authentic storytelling showcasing ranch life, livestock, cowboys, and agriculture.</p></div>
+        </div>
+    </div>
 </section>
-
 
 <section id="contact">
-
-
-<div class="container contact">
-
-
-<h2 class="section-title">
-Let's Work Together
-</h2>
-
-
-<p>
-Available throughout Canada and the United States.
-</p>
-
-
-<p>
-media@backcountryranching.com 
-</p>
-
-
-<a class="btn" href="mailto:media@backcountryranching.com">
-    Get In Touch
-</a>
-
-<div class="social-icons">
-
-    <a class="social-link" href="https://www.instagram.com/backcountryranching/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-    </a>
-
-    <a class="social-link" href="https://www.facebook.com/backcountryranching" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-        <i class="fa-brands fa-facebook-f"></i>
-    </a>
-
-</div>
-
-</div>
-
-
+    <div class="container contact">
+        <h2 class="section-title">Let's Work Together</h2>
+        <p>Available throughout Canada and the United States.</p>
+        <p>media@backcountryranching.com</p>
+        <a class="btn" href="mailto:media@backcountryranching.com">Get In Touch</a>
+        <div class="social-icons">
+            <a class="social-link" href="https://www.instagram.com/backcountryranching/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a class="social-link" href="https://www.facebook.com/backcountryranching" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        </div>
+    </div>
 </section>
 
-
-<footer>
-
-© 2026 BackcountryRanching. All Rights Reserved.
-
-</footer>
-
-
+<footer>© 2026 BackcountryRanching. All Rights Reserved.</footer>
 <script src="script.js" defer></script>
-
-
 </body>
-
 </html>

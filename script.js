@@ -27,10 +27,7 @@ function setMenu(open) {
     document.body.classList.toggle("menu-open", open);
 
     hamburger.setAttribute("aria-expanded", String(open));
-    hamburger.setAttribute(
-        "aria-label",
-        open ? "Close navigation menu" : "Open navigation menu"
-    );
+    hamburger.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
 }
 
 window.addEventListener("scroll", updateNav, { passive: true });
@@ -46,12 +43,10 @@ hamburger?.addEventListener("click", () => {
 
 menuOverlay?.addEventListener("click", () => setMenu(false));
 
+// Keep native anchor navigation so the mobile menu remains reliable.
 document.querySelectorAll('.menu a[href^="#"]').forEach(link => {
-    link.addEventListener("click", () => {
-        setMenu(false);
-    });
+    link.addEventListener("click", () => setMenu(false));
 });
-
 
 /* LIGHTBOX */
 const images = [...document.querySelectorAll(".gallery img")];
@@ -92,16 +87,8 @@ images.forEach((img, index) => {
 });
 
 closeBtn?.addEventListener("click", closeLightbox);
-
-nextBtn?.addEventListener("click", event => {
-    event.stopPropagation();
-    showImage(currentIndex + 1);
-});
-
-prevBtn?.addEventListener("click", event => {
-    event.stopPropagation();
-    showImage(currentIndex - 1);
-});
+nextBtn?.addEventListener("click", event => { event.stopPropagation(); showImage(currentIndex + 1); });
+prevBtn?.addEventListener("click", event => { event.stopPropagation(); showImage(currentIndex - 1); });
 
 lightbox?.addEventListener("click", event => {
     if (event.target === lightbox) closeLightbox();
@@ -117,34 +104,22 @@ document.addEventListener("keydown", event => {
     }
 
     if (!lightbox?.classList.contains("active")) return;
-
     if (event.key === "ArrowRight") showImage(currentIndex + 1);
     if (event.key === "ArrowLeft") showImage(currentIndex - 1);
 });
 
-lightbox?.addEventListener(
-    "touchstart",
-    event => {
-        touchStartX = event.changedTouches[0].screenX;
-    },
-    { passive: true }
-);
+lightbox?.addEventListener("touchstart", event => {
+    touchStartX = event.changedTouches[0].screenX;
+}, { passive: true });
 
-lightbox?.addEventListener(
-    "touchend",
-    event => {
-        const distance = event.changedTouches[0].screenX - touchStartX;
-
-        if (Math.abs(distance) > 50) {
-            showImage(currentIndex + (distance < 0 ? 1 : -1));
-        }
-    },
-    { passive: true }
-);
+lightbox?.addEventListener("touchend", event => {
+    const distance = event.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(distance) > 50) showImage(currentIndex + (distance < 0 ? 1 : -1));
+}, { passive: true });
 
 /* IMAGE PROTECTION */
 document.addEventListener("contextmenu", event => {
-    if (event.target.closest("img, .hero, .gallery, #lightbox")) {
+    if (event.target.closest("img, .hero, .gallery, .portfolio-category, #lightbox")) {
         event.preventDefault();
     }
 });
@@ -157,14 +132,12 @@ document.querySelectorAll("img").forEach(img => {
 
 document.addEventListener("keydown", event => {
     const key = event.key.toLowerCase();
-
-    if ((event.ctrlKey || event.metaKey) && (key === "s" || key === "u")) {
-        event.preventDefault();
-    }
+    if ((event.ctrlKey || event.metaKey) && (key === "s" || key === "u")) event.preventDefault();
 });
 
 /* LOADER */
 const startTime = Date.now();
+const loaderImagePath = document.body.dataset.loaderImage || "images/hero.jpg";
 const heroImage = new Image();
 let heroRevealed = false;
 
@@ -173,7 +146,6 @@ function revealHero() {
     heroRevealed = true;
 
     const remaining = Math.max(0, 650 - (Date.now() - startTime));
-
     window.setTimeout(() => {
         hero?.classList.add("loaded");
         loader?.classList.add("hidden");
@@ -182,6 +154,5 @@ function revealHero() {
 
 heroImage.addEventListener("load", revealHero, { once: true });
 heroImage.addEventListener("error", revealHero, { once: true });
-heroImage.src = "images/hero.jpg";
-
+heroImage.src = loaderImagePath;
 if (heroImage.complete) revealHero();
