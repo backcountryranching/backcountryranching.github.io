@@ -55,6 +55,7 @@ const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.getElementById("close");
 const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
+const lightboxCounter = document.getElementById("lightbox-counter");
 
 let currentIndex = 0;
 let touchStartX = 0;
@@ -65,6 +66,8 @@ function showImage(index) {
     currentIndex = (index + images.length) % images.length;
     lightboxImg.src = images[currentIndex].src;
     lightboxImg.alt = images[currentIndex].alt;
+    lightboxCounter.textContent =
+    `${currentIndex + 1} / ${images.length}`;
 }
 
 function openLightbox(index) {
