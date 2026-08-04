@@ -110,7 +110,6 @@ body#top{scroll-margin-top:0;}
 
 /* ABOUT */
 .about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
-.about img{border-radius:6px;}
 #about{background:var(--cream);color:#241b14;}
 #about .section-title{color:#241b14;}
 #about p{color:#4a4037;}
